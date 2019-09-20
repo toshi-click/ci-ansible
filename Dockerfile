@@ -93,5 +93,8 @@ RUN wget git.io/nodebrew && \
   . $HOME/.bashrc && nodebrew install-binary $NODE_VERSION && \
   . $HOME/.bashrc && nodebrew use $NODE_VERSION
 
+# CIサーバーからsshの警告が出ないように設定を追加する
+ADD ansible.cfg /etc/ansible/ansible.cfg
+
 WORKDIR $HOME/work
 CMD ["/bin/bash"]
