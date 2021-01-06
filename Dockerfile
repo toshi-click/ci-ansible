@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN apt update && \
   apt upgrade -y -q && \
@@ -32,7 +32,7 @@ RUN apt update && \
   pip install -U pip && \
   mkdir /code && \
   rm -rf /var/lib/apt/lists/* && \
-  pip install ansible-lint awscli
+  pip install ansible-lint awscli paramiko
 
 # gcloud
 # バージョンはhttps://console.cloud.google.com/storage/browser/cloud-sdk-release?authuser=0&pli=1 を確認
