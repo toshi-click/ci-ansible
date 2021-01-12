@@ -18,10 +18,10 @@ RUN apt update && \
   rm -rf /var/lib/apt/lists/*
 
 # ansible
-RUN apt update && \
-  apt upgrade -y -q && \
-  apt -y -q install ansible && \
-  rm -rf /var/lib/apt/lists/*
+#RUN apt update && \
+#  apt upgrade -y -q && \
+#  apt -y -q install ansible && \
+#  rm -rf /var/lib/apt/lists/*
 
 ## python
 RUN apt update && \
@@ -32,7 +32,7 @@ RUN apt update && \
   pip install -U pip && \
   mkdir /code && \
   rm -rf /var/lib/apt/lists/* && \
-  pip install ansible-lint awscli paramiko
+  pip install ansible ansible-lint awscli paramiko
 
 # gcloud
 # バージョンはhttps://console.cloud.google.com/storage/browser/cloud-sdk-release?authuser=0&pli=1 を確認
